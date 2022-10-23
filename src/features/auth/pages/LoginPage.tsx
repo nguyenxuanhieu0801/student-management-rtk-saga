@@ -55,7 +55,7 @@ const LoginPage = (props: ILoginPageProps) => {
     }
   };
 
-  if (Boolean(localStorage.getItem('access_token'))) return;
+  if (Boolean(localStorage.getItem('access_token'))) return null;
 
   return (
     <Stack minHeight="100vh" direction="row" justifyContent="center" alignItems="center">

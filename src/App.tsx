@@ -2,8 +2,8 @@ import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { NotFound, PrivateRoute } from './components/Common';
 import { AdminLayout } from './components/Layout';
-import LoginPage from './features/auth/pages/LoginPage';
 
+const LoginPage = lazy(() => import('features/auth/pages/LoginPage'));
 const Dashboard = lazy(() => import('features/dashboard'));
 const StudentFeature = lazy(() => import('features/student'));
 
@@ -12,6 +12,7 @@ const App = () => {
     <Suspense>
       <Routes>
         <Route path="/" element={<LoginPage />} />
+
         <Route element={<AdminLayout />}>
           <Route element={<PrivateRoute />}>
             <Route path="/admin/dashboard" element={<Dashboard />} />
