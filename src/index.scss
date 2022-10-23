@@ -1,0 +1,10 @@
+.sidebar {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .active > div {
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+}
